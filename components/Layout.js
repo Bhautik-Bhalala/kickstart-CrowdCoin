@@ -6,7 +6,7 @@ export default (props) => {
   return (
     <Container>
     <Header />
-      <h1>I am a Header</h1>
+      {/* <h1>I am a Header</h1> */}
       {props.children}
     </Container>
   );
