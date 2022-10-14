@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, Container } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 import Header from "./Header";
 
 const Layout = (props) => {

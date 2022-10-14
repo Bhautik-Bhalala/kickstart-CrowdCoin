@@ -5,6 +5,8 @@ import Campaign from "../../ethereum/campaign";
 import web3 from "../../ethereum/web3";
 import ContributeForm from "../../components/ContributeForm";
 import { Link } from "../../routes";
+import 'semantic-ui-css/semantic.min.css' 
+
 
 class CampaignShow extends Component {
   static async getInitialProps(props) {
