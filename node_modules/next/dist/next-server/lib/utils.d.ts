@@ -3,11 +3,11 @@ import { IncomingMessage, ServerResponse } from 'http';
 import { ParsedUrlQuery } from 'querystring';
 import { ComponentType } from 'react';
 import { UrlObject } from 'url';
-import { ManifestItem } from '../server/load-components';
 import { NextRouter } from './router/router';
 import { Env } from '@next/env';
 import { BuildManifest } from '../server/get-page-files';
 import { DomainLocales } from '../server/config';
+import { PreviewData } from 'next/types';
 /**
  * Types used by both next and next-server
  */
@@ -63,7 +63,7 @@ export declare type NEXT_DATA = {
     nextExport?: boolean;
     autoExport?: boolean;
     isFallback?: boolean;
-    dynamicIds?: string[];
+    dynamicIds?: (string | number)[];
     err?: Error & {
         statusCode?: number;
     };
@@ -110,6 +110,18 @@ export interface NextPageContext {
      */
     asPath?: string;
     /**
+     * The currently active locale
+     */
+    locale?: string;
+    /**
+     * All configured locales
+     */
+    locales?: string[];
+    /**
+     * The configured default locale
+     */
+    defaultLocale?: string;
+    /**
      * `Component` the tree of the App to use if needing to render separately
      */
     AppTree: AppTreeType;
@@ -149,7 +161,7 @@ export declare type DocumentProps = DocumentInitialProps & {
     inAmpMode: boolean;
     hybridAmp: boolean;
     isDevelopment: boolean;
-    dynamicImports: ManifestItem[];
+    dynamicImports: string[];
     assetPrefix?: string;
     canonicalBase: string;
     headTags: any[];
@@ -157,10 +169,11 @@ export declare type DocumentProps = DocumentInitialProps & {
     unstable_JsPreload?: false;
     devOnlyCacheBusterQueryString: string;
     scriptLoader: {
-        defer?: string[];
-        eager?: any[];
+        afterInteractive?: string[];
+        beforeInteractive?: any[];
     };
     locale?: string;
+    disableOptimizedLoading?: boolean;
 };
 /**
  * Next `API` route request
@@ -184,7 +197,7 @@ export interface NextApiRequest extends IncomingMessage {
     /**
      * Preview data set on the request, if any
      * */
-    previewData?: any;
+    previewData?: PreviewData;
 }
 /**
  * Send body of response

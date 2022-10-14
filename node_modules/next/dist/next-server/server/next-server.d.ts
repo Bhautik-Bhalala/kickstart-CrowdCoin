@@ -63,6 +63,7 @@ export default class Server {
         images: string;
         fontManifest: FontManifest;
         optimizeImages: boolean;
+        disableOptimizedLoading?: boolean;
         optimizeCss: any;
         locale?: string;
         locales?: string[];
@@ -71,7 +72,6 @@ export default class Server {
         distDir: string;
     };
     private compression?;
-    private onErrorMiddleware?;
     private incrementalCache;
     protected router: Router;
     protected dynamicRoutes?: DynamicRoutes;

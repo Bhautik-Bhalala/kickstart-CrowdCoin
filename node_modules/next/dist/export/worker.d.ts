@@ -26,8 +26,9 @@ interface ExportPageInput {
     subFolders?: boolean;
     serverless: boolean;
     optimizeFonts: boolean;
-    optimizeImages: boolean;
+    optimizeImages?: boolean;
     optimizeCss: any;
+    disableOptimizedLoading: any;
     parentSpanId: any;
 }
 interface ExportPageResults {
@@ -48,6 +49,7 @@ interface RenderOpts {
     ampSkipValidation?: boolean;
     optimizeFonts?: boolean;
     optimizeImages?: boolean;
+    disableOptimizedLoading?: boolean;
     optimizeCss?: any;
     fontManifest?: FontManifest;
     locales?: string[];
@@ -55,5 +57,5 @@ interface RenderOpts {
     defaultLocale?: string;
     trailingSlash?: boolean;
 }
-export default function exportPage({ parentSpanId, path, pathMap, distDir, outDir, pagesDataDir, renderOpts, buildExport, serverRuntimeConfig, subFolders, serverless, optimizeFonts, optimizeImages, optimizeCss, }: ExportPageInput): Promise<ExportPageResults>;
+export default function exportPage({ parentSpanId, path, pathMap, distDir, outDir, pagesDataDir, renderOpts, buildExport, serverRuntimeConfig, subFolders, serverless, optimizeFonts, optimizeImages, optimizeCss, disableOptimizedLoading, }: ExportPageInput): Promise<ExportPageResults>;
 export {};
