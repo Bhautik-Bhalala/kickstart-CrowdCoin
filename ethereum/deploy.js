@@ -4,8 +4,7 @@ const compiledFactory = require('./build/CampainFactory.json');
 
 const provider = new HDWalletPrrovider(
     'task caution bus maple join slush helmet hotel friend walnut airport surprise',
-    // 'https://goerli.infura.io/v3/b38cb4225c574451b5f258ca41603668',
-    'https://sepolia.infura.io/v3/b84ae094adf74ca7b2f12e9f50c1a1fe',
+    'https://sepolia.infura.io/v3/b84ae094adf74ca7b2f12e9f50c1a1fe'
     );
 
 const web3 = new Web3(provider);
@@ -19,15 +18,34 @@ const deploy = async () => {
         .send({gas : '1000000' , from : accounts[0]});
 
     console.log('Contract deployed to', result.options.address);
-    console.log(await web3.eth.getBalance(accounts[0]));
-    console.log(await web3.eth.getBalance(accounts[1]));
-
-
 
     provider.engine.stop(); 
 };
 deploy();
 
+//new
+//Attempting to deploy from account 0xA5F5F30400E92E80caEaB5eE6b7312d4547857B8
+//Contract deployed to 0xbCFF1C5E5Dc203E35CE9ba896C1d97d57ab640A9
+
+//Attempting to deploy from account 0xA5F5F30400E92E80caEaB5eE6b7312d4547857B8
+//Contract deployed to 0xB2002867A0B3c53AE71949Dd0E439BaDB7333421
+
+//Attempting to deploy from account 0xA5F5F30400E92E80caEaB5eE6b7312d4547857B8
+//Contract deployed to 0xE2225dA5BBe17Dd54Eb8876FCCf45Cb9742Cbc94
+
+//Attempting to deploy from account 0xA5F5F30400E92E80caEaB5eE6b7312d4547857B8
+///Contract deployed to 0xfa395091e56aC919590Ae736d8d51783803A6D31
+
+//Attempting to deploy from account 0xA5F5F30400E92E80caEaB5eE6b7312d4547857B8
+//Contract deployed to 0x53d759c40Ce1154AC842D18a61eEe0dc2885B589
+
+//Attempting to deploy from account 0xA5F5F30400E92E80caEaB5eE6b7312d4547857B8
+//Contract deployed to 0x01A24e3dA1749D4D8053385FD708a6A07c35cC9D
+
+//Attempting to deploy from account 0xA5F5F30400E92E80caEaB5eE6b7312d4547857B8
+//Contract deployed to 0xF389E4E7D3881015448f4c54F731bFf7b74F1e6b
+
+//old
 //0x5C12A9A9a50A6C96F97d38936F4053b5C5b8b486
 //0x619662E9f9C35Ca799404955049b7189D381f0cE --deployed campaign
 

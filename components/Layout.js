@@ -1,13 +1,16 @@
 import React from "react";
-import { Menu , Container} from "semantic-ui-react";
+import { Menu, Container } from "semantic-ui-react";
 import Header from "./Header";
 
-export default (props) => {
+const Layout = (props) => {
   return (
-    <Container>
-    <Header />
-      {/* <h1>I am a Header</h1> */}
-      {props.children}
-    </Container>
+    <div>
+      <Container>
+        <Header />
+        {props.children}
+      </Container>
+    </div>
   );
 };
+
+export default Layout;

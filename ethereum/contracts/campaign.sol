@@ -24,7 +24,6 @@ contract Campaign{
     }
 
     Request[] public requests;
-
     address public manager;
     uint public minimumContribution;
     // address[] public approvers;
@@ -80,5 +79,19 @@ contract Campaign{
         request.recipient.transfer(request.value);
         request.complete =true;
 
+    }
+
+    function getSummary() public view returns(uint, uint, uint, uint, address){
+        return (
+            minimumContribution,
+            this.balance,
+            requests.length,
+            approverCount,
+            manager
+        );
+    }
+
+    function getRequestCount() public view returns (uint){
+        return requests.length;
     }
 } 
