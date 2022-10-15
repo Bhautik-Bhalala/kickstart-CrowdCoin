@@ -1,14 +1,9 @@
 import React , {Component} from 'react';
 import { Card , Button} from 'semantic-ui-react';
 import factory from '../ethereum/factory';
-import 'semantic-ui-css/semantic.min.css' 
 import Layout from '../components/Layout';
 import {Link} from '../routes';
 
-
-// export default () => {
-//     return <h1>This is the new campaign page !!!</h1>
-// };
 
 class CampaignIndex extends Component {
     static async getInitialProps(){
@@ -20,7 +15,8 @@ class CampaignIndex extends Component {
             return {
                 header: address,
                 description: (
-                    <Link route={`/campaigns/${address}`}><a>View Campaign</a>
+                    <Link route={`/campaigns/${address}`}>
+                        <a>View Campaign</a>
                     </Link>
                 ),
                 fluid:true
