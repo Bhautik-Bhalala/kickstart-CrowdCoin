@@ -1,9 +1,12 @@
 {
   "name": "kickstart",
   "version": "1.0.0",
+  "homepage": "https://bhautik-bhalala.github.io/Crowdcoin/",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "mocha",
     "dev": "node server.js"
   },
@@ -13,6 +16,7 @@
     "@truffle/hdwallet-provider": "^1.7.0",
     "fs-extra": "^10.1.0",
     "ganache-cli": "^6.12.2",
+    "gh-pages": "^4.0.0",
     "mocha": "^10.0.0",
     "next": "^10.2.3",
     "next-routes": "^1.4.2",
