@@ -1,6 +1,2 @@
 # kickstart-CrowdCoin
-
-
-
-            Mozilla Firefox 2022-10-17 14-54-42.mp4
-          
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z5ERmuP_R7E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
